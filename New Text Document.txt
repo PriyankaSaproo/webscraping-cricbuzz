@@ -1,0 +1,11 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+
+driver = webdriver.Chrome(executable_path='C:/webdrivers/chromedriver')
+driver.get(r'https://olympics.com/en/news/what-we-learned-badminton-wrap-up-from-the-tokyo-2020-olympics')
+p = driver.find_elements_by_class_name("b2p-main--container")
+p = driver.find_elements_by_id('content')
+
+for i in p:
+    print(i.text.strip())
+driver.quit()
